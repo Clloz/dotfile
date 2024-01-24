@@ -163,8 +163,7 @@ alias vim=nvim
 # alias
 alias vmode="set -o vi"
 alias emode="set -o emacs"
-alias lc="colorls"
-alias lcl="colorls -al"
+alias lc="colorls -lA --sd"
 alias chrome="open -a /Applications/Google\ Chrome.app/"
 alias typora="open -a /Applications/Typora.app"
 alias bear="open -a /Applications/Bear.app"
@@ -225,7 +224,9 @@ alias clocvue="cloc ./ --exclude-dir=node_modules"
 alias dotconf="/opt/homebrew/bin/git --git-dir $HOME/.dotfiles --work-tree=$HOME"
 
 # hash directory
-hash -d OneDrive=~/Library/CloudStorage/OneDrive-Personal
+hash -d OneDrive=/Users/Clloz/Library/CloudStorage/OneDrive-Personal
+hash -d hugodir=/Users/Clloz/Documents/Note/github-pages
+hash -d keenon=/Users/Clloz/Work/keenon
 
 # 自动补全 git branch
 compdef _git_branch_comp gerrit-push
@@ -329,6 +330,7 @@ export PATH="$PATH:/Users/Clloz/.jetbrains/bin"
 
 # homebrew ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -345,3 +347,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source $(dirname $(gem which colorls))/tab_complete.sh
